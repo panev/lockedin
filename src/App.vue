@@ -1,8 +1,31 @@
 <template>
   <div id="app">
+
     <img src="./assets/Airwaves.svg" class="airwaves" alt="airwaves graphic">
     <img src="./assets/Logo.svg" class="head-logo" alt="lockedin logo">
-    <BeyondPlayer />
+
+      <div class="phone-frame">
+        <img src="./assets/blackNotch.svg" alt="phone notch">
+        <BeyondPlayer />
+      </div>
+      <h1 class="player-info">Listen to bassdrive radio on your phone or in your browser</h1>
+      <h5 class="player-info"><img src="./assets/Arrow.svg" alt="arrow pointing left"> Click Play and try it out!</h5>
+
+      <h1 class="pwa-info">Tune in anywhere</h1>
+      <p class="pwa-info">You can use this site as an app on your phone – no need to download anyhing –  just visit this page and hit “Add to home screen”.</p>
+      <div class="ios-preview">
+        <h5>iOS</h5>
+      </div>
+      <div class="android-preview">
+        <h5>Android</h5>
+      </div>
+
+    <footer>
+      <span>Find this useful? Care to make it better? <a href="#" target="_blank">Contribute!</a> Licensed under <a href="https://choosealicense.com/licenses/gpl-3.0/" target="_blank">GNU GPL 3.0</a></span>
+      <span></span>
+      <span>Follow / DM me on <a href="https://twitter.com/todorpanev" target="_blank">Twitter</a></span>
+    </footer>
+
   </div>
 </template>
 
@@ -19,27 +42,43 @@ export default {
 
 <style lang="scss">
 
+$c-primary: #203555;
+$c-secondary: #55D9CC;
+
 body,
 html {
   padding: 0;
   margin: 0;
   overflow-x: hidden;
   overflow-y: scroll;
+  padding-bottom: 200px;
+}
 
+* {
+  box-sizing: border-box;
 }
 
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'PT Sans', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(12, 60px);
   grid-column-gap: 20px; 
+  grid-template-rows: 
+    [logo] 100px 
+    [player-info] 580px 
+    [pwa-info] 580px 
+    [footer] 300px;
+  ;
+  grid-row-gap: 90px;
+
 }
 
 .head-logo {
   grid-column: 1 / 13;
+  grid-row: logo;
   justify-self: center;
 }
 
@@ -47,11 +86,162 @@ html {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: -1550px;
+  top: -1260px;
   z-index: -1;
   animation: airani linear 15s infinite;
   transform-origin: 0%;
 }
+
+.player-info {
+}
+
+.phone-frame {
+  background: hotpink;
+  grid-row: player-info;
+  grid-column: 2 / 6;
+  height: 530px;
+  grid-column: 2 / 6;
+  border-radius: 24px;
+  border: 10px solid $c-primary;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+
+  & img {
+    margin-top: -0.6px;
+    z-index: 1;
+  }
+
+  &:after {
+    content: '';
+    background: url('./assets/phoneShadow.svg');
+    width: 327px;
+    height: 129px;
+    position: absolute;
+    bottom: -50px;
+    overflow: visible;
+    z-index: -1;
+    /*opacity: 0.75;*/
+  }
+
+}
+
+.player-info {
+  grid-column: 7 / 12;
+  grid-row: player-info;
+}
+
+h1.player-info {
+  margin-top: 150px;
+}
+
+h5.player-info {
+  margin-top: 290px;
+  
+  & img {
+    position: relative;
+    top: -5px;
+    left: -10px;
+  }
+}
+
+h1 {
+  font-family: 'PT Sans Caption', sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  color: $c-primary;
+}
+
+h5 {
+  font-size: 20px;
+  color: #203555;
+  font-weight: 300;
+  color: $c-secondary;
+}
+
+p {
+  font-size: 21px;
+  color: $c-secondary;
+}
+
+.pwa-info {
+  grid-column: 2 / 12;
+  grid-row: pwa-info;
+  text-align: center;
+}
+
+p.pwa-info {
+  margin-top: 70px;
+}
+
+
+.ios-preview,
+.android-preview {
+  height: 300px;
+  border-radius: 50%;
+  background: hotpink;
+  margin-top: 200px;
+  border: 10px solid #fff;
+  grid-row: pwa-info;
+  position: relative;
+
+  &:after {
+    content: ' ';
+    display: block;
+    width: 350px;
+    height: 350px;
+    background: url('./assets/previewShadow.svg');
+    position: absolute;
+    top: -15px;
+    left: -30px;
+    z-index: -1;
+  }
+
+  & h5 {
+    text-align: center;
+    position: absolute;
+    bottom: -110px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.ios-preview {
+  grid-column: 2 / 6;
+}
+
+.android-preview {
+  grid-column: 8 / 12;
+}
+
+
+footer {
+  grid-row: footer;
+  border-top: 1px dashed rgba($c-primary, .10);
+  grid-column: 1 / 13;
+  text-align: center;
+  padding-top: 50px;
+  margin-top: 50px;
+
+  & span {
+    display: block;
+    font-size: 16px;
+    color: #B4B4B4;
+    margin: 5px auto;
+
+    & a {
+      color: #999;
+      font-weight: bold;
+      text-decoration: underline;
+    
+      &:hover {
+        color: #333;
+      }
+    }
+  }
+}
+
 
 /*@keyframes airani {
   0% {

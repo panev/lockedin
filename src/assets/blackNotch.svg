@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="172px" height="24px" viewBox="0 0 172 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>black-Notch</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="66" y="8" width="39.5241679" height="5.13933022" rx="2.56966511"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-395.000000, -183.000000)">
+            <g id="Group-2" transform="translate(341.000000, 183.000000)">
+                <g id="Group">
+                    <g id="black-Notch" transform="translate(54.000000, 0.000000)">
+                        <path d="M0.821052632,-1.13686838e-13 L171.495036,-1.13686838e-13 C168.823219,-8.72089455e-14 167.487311,1.3656377 167.487311,4.09691311 C167.487311,5.0882365 167.48731,6.57417886 167.487309,8.5547402 L167.487308,8.5547402 C167.487304,16.8390077 160.771576,23.554731 152.487309,23.554731 L19.0030873,23.554731 C10.718816,23.554731 4.00308726,16.8390022 4.00308726,8.55473098 C4.00308726,7.38766703 4.00308726,6.22060307 4.00308726,5.05353911 C4.00308726,2.24533996 2.94240905,0.560826928 0.821052632,-1.13686838e-13 Z" id="Rectangle" fill="#203555" fill-rule="nonzero"></path>
+                        <circle id="Oval-" fill="#152338" cx="127.5" cy="10.5" r="4.5"></circle>
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="s" fill="#152338" xlink:href="#path-1"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
