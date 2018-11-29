@@ -5,7 +5,7 @@
     <img src="./assets/Logo.svg" class="head-logo" alt="lockedin logo">
 
       <div class="phone-frame">
-        <img src="./assets/blackNotch.svg" alt="phone notch">
+        <img src="./assets/blackNotch.svg" class="phone-notch" alt="phone notch">
         <BeyondPlayer />
       </div>
       <h1 class="player-info">Listen to bassdrive radio on your phone or in your browser</h1>
@@ -21,7 +21,7 @@
       </div>
 
     <footer>
-      <span>Find this useful? Care to make it better? <a href="#" target="_blank">Contribute!</a> Licensed under <a href="https://choosealicense.com/licenses/gpl-3.0/" target="_blank">GNU GPL 3.0</a></span>
+      <span>Find this useful? Care to make it better? <a href="https://github.com/panev/beyond-pwa.git" target="_blank">Contribute!</a> Licensed under <a href="https://choosealicense.com/licenses/gpl-3.0/" target="_blank">GNU GPL 3.0</a></span>
       <span></span>
       <span>Follow / DM me on <a href="https://twitter.com/todorpanev" target="_blank">Twitter</a></span>
     </footer>
@@ -96,7 +96,7 @@ html {
 }
 
 .phone-frame {
-  background: hotpink;
+  background-color: $c-primary;
   grid-row: player-info;
   grid-column: 2 / 6;
   height: 530px;
@@ -122,7 +122,6 @@ html {
     bottom: -50px;
     overflow: visible;
     z-index: -1;
-    /*opacity: 0.75;*/
   }
 
 }
@@ -243,14 +242,64 @@ footer {
 }
 
 
-/*@keyframes airani {
-  0% {
-    transform: scale(1) translateX(-50%);
+@media (max-width: 1024px) {
+
+  #app {
+    justify-content: center;
+    grid-template-columns: 1fr;
+    grid-column-gap: 0px; 
+    grid-template-rows: calc(100% + 20px);
+    grid-row-gap: 0px;
+    height: calc(100% + 20px);
+    overflow-y: hidden;
+    overflow-x: hidden;
   }
 
-  100% {
-    transform: scale(2) translateX(-50%);
+  body, html {
+    height: calc(100% + 20px);
+    padding: 0;
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+
+  .head-logo,
+  .player-info,
+  .pwa-info,
+  .ios-preview,
+  .android-preview,
+  .phone-notch,
+  .airwaves,
+    footer {
+      display: none;
+  }
+
+  .phone-frame {
+    grid-column: 1;
+    grid-row: 1;
+    border: none;
+    border-radius: 0;
+    height: calc(100% + 20px);
+    overflow-y: hidden;
+    overflow-x: hidden;
+    
+    &:after {
+      display: none;
+    }
+  }
+
+  .player-container,
+  .player-gradient,
+  .player-gradient-playing {
+    border-radius: 0;
+    overflow-y: hidden;
+    overflow-x: hidden;
   }
 }
-*/
+
+@media (max-height: 800px) {
+  #app {
+    grid-row-gap: 10px;
+  }
+}
+
 </style>

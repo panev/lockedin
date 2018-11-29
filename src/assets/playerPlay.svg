@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="120px" height="126px" viewBox="0 0 120 126" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="138px" height="145px" viewBox="0 0 138 145" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
     <title>Path 2</title>
     <desc>Created with Sketch.</desc>
     <defs>
-        <path d="M91,227.199564 L91,308.20026 C91,314.827677 96.372583,320.20026 103,320.20026 C105.00519,320.20026 106.978414,319.697782 108.739385,318.738736 L183.104837,278.238388 C188.925076,275.068613 191.073702,267.780767 187.903928,261.960528 C186.799361,259.932357 185.133007,258.266004 183.104837,257.161437 L108.739385,216.661089 C102.919145,213.491314 95.6312991,215.639941 92.4615245,221.46018 C91.5024782,223.22115 91,225.194374 91,227.199564 Z" id="path-1"></path>
-        <filter x="-11.2%" y="-3.5%" width="125.0%" height="120.3%" filterUnits="objectBoundingBox" id="filter-2">
+        <path d="M129,283.195537 L129,383.432081 C129,390.059498 134.372583,395.432081 141,395.432081 C143.004478,395.432081 144.977025,394.929959 146.737539,393.971561 L238.8015,343.853289 C244.622294,340.684534 246.772197,333.397064 243.603441,327.57627 C242.498546,325.54665 240.83112,323.879224 238.8015,322.774328 L146.737539,272.656056 C140.916744,269.487301 133.629275,271.637204 130.46052,277.457998 C129.502122,279.218511 129,281.191058 129,283.195537 Z" id="path-1"></path>
+        <filter x="-9.7%" y="-3.1%" width="121.6%" height="117.5%" filterUnits="objectBoundingBox" id="filter-2">
             <feMorphology radius="0.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
             <feOffset dx="8" dy="8" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
             <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
@@ -13,14 +13,10 @@
         </filter>
     </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Desktop-HD" transform="translate(-429.000000, -396.000000)">
-            <g id="Group-2" transform="translate(341.000000, 183.000000)">
-                <g id="Group">
-                    <g id="Path-2">
-                        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
-                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
-                    </g>
-                </g>
+        <g id="iPhone-8" transform="translate(-126.000000, -269.000000)">
+            <g id="Path-2">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
             </g>
         </g>
     </g>
