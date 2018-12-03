@@ -2,6 +2,12 @@
   <div id="app">
 
     <img src="./assets/Airwaves.svg" class="airwaves" alt="airwaves graphic">
+    <!-- <div class="wave"></div> -->
+    <img src="./assets/Wave.svg" class="wave w1" alt="wave graphic"> 
+    <img src="./assets/Wave.svg" class="wave w2" alt="wave graphic">
+    <img src="./assets/Wave.svg" class="wave w3" alt="wave graphic">
+    <img src="./assets/Wave.svg" class="wave w4" alt="wave graphic">
+    <img src="./assets/Wave.svg" class="wave w5" alt="wave graphic">
     <img src="./assets/Logo.svg" class="head-logo" alt="lockedin logo">
 
       <div class="phone-frame">
@@ -80,6 +86,8 @@ html {
   grid-column: 1 / 13;
   grid-row: logo;
   justify-self: center;
+  z-index: 1;
+  position: relative;
 }
 
 .airwaves {
@@ -92,7 +100,50 @@ html {
   transform-origin: 0%;
 }
 
-.player-info {
+.wave {
+  position: absolute;
+  z-index: 0;
+  left: 50%;
+  top: -445px;
+  width: 510px;
+  height: 510px;
+  border-radius: 50%;
+  transform: translateX(-50%) scale(1);
+  opacity: 0.6;
+  animation: emitt 15s infinite linear;
+}
+
+.w1 {
+  animation-delay: 0s;
+}
+
+.w2 {
+  animation-delay: 3s;
+}
+
+.w3 {
+  animation-delay: 6s;
+}
+
+.w4 {
+  animation-delay: 9s;
+}
+
+.w5 {
+  animation-delay: 12s;
+}
+
+@keyframes emitt {
+  0% {
+    transform: translateX(-52%) scale(1);
+    opacity: 0.6;
+  }
+
+
+  100% {
+    transform: translateX(-52%) scale(3);
+    opacity: 0;
+  }
 }
 
 .phone-frame {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="2138px" height="2138px" viewBox="0 0 2138 2138" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
     <title>Airwaves</title>
     <desc>Created with Sketch.</desc>
     <defs>
@@ -16,11 +16,11 @@
             <g id="Airwaves" transform="translate(2102.000000, 2367.000000)">
                 <circle id="Oval-Copy" fill="url(#radialGradient-1)" opacity="0.562127976" cx="1069" cy="1069" r="802"></circle>
                 <circle id="Oval-Copy" fill="url(#radialGradient-1)" opacity="0.15" cx="1069" cy="1069" r="1014"></circle>
-                <circle id="Oval-Copy-4" stroke="#DBE2E5" opacity="0.486676897" cx="1069" cy="1069" r="736.5"></circle>
-                <circle id="Oval-Copy-4" stroke="#FEFEFE" opacity="0.900000036" cx="1069" cy="1069" r="911.5"></circle>
+                <circle id="Oval-Copy-4" stroke="#DBE2E5" opacity="0" cx="1069" cy="1069" r="736.5"></circle>
+                <circle id="Oval-Copy-4" stroke="#FEFEFE" opacity="0" cx="1069" cy="1069" r="911.5"></circle>
                 <circle id="Oval-Copy-4" stroke="#DBE2E5" opacity="0.190545945" cx="1069" cy="1069" r="1068.5"></circle>
-                <circle id="Oval-Copy-4" stroke="#DBE2E5" opacity="0.668689546" cx="1069" cy="1069" r="600.5"></circle>
-                <circle id="Oval-Copy-4" stroke="#DBE2E5" opacity="0.802083333" cx="1069" cy="1069" r="436.5"></circle>
+                <circle id="Oval-Copy-4" stroke="#DBE2E5" opacity="0" cx="1069" cy="1069" r="600.5"></circle>
+                <circle id="Oval-Copy-4" stroke="#DBE2E5" opacity="0" cx="1069" cy="1069" r="436.5"></circle>
             </g>
         </g>
     </g>
