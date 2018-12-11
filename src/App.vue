@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div v-bind:class="platform" id="app">
 
     <img src="./assets/Airwaves.svg" class="airwaves" alt="airwaves graphic">
     <!-- <div class="wave"></div> -->
@@ -10,26 +10,23 @@
     <img src="./assets/Wave.svg" class="wave w5" alt="wave graphic">
     <img src="./assets/Logo.svg" class="head-logo" alt="lockedin logo">
 
-      <div class="phone-frame">
-        <img src="./assets/blackNotch.svg" class="phone-notch" alt="phone notch">
-        <BeyondPlayer />
-      </div>
-      <h1 class="player-info">Listen to bassdrive radio on your phone or in your browser</h1>
-      <h5 class="player-info"><img src="./assets/Arrow.svg" alt="arrow pointing left"> Click Play and try it out!</h5>
+    <div class="phone-frame">
+      <img src="./assets/blackNotch.svg" class="phone-notch" alt="phone notch">
+      <BeyondPlayer />
+    </div>
+    <h1 class="player-info">Listen to bassdrive radio on your phone or in your browser</h1>
+    <h5 class="player-info"><img src="./assets/Arrow.svg" alt="arrow pointing left"> Click Play and try it out!</h5>
 
-      <h1 class="pwa-info">Tune in anywhere</h1>
-      <p class="pwa-info">You can use this site as an app on your phone – no need to download anyhing –  just visit this page and hit “Add to home screen”.</p>
-      <div class="ios-preview">
-        <div class="video-clip">
-          <video autoplay muted loop playsinline preload="metadata">
-            <source src="./assets/ios.mp4" type="video/mp4">
-          </video>
-        </div>
-        <h5>iOS</h5>
-      </div>
-      <div class="android-preview">
-        <h5>Android</h5>
-      </div>
+    <h1 class="pwa-info">Tune in anywhere</h1>
+    <p class="pwa-info">You can use this site as an app on your phone – no need to download anyhing –  just visit this page and hit “Add to home screen”.</p>
+    <div class="ios-preview">
+      <img src="./assets/iOSexpl.png" alt="explanation how to add to home screen on ios">
+      <h5>iOS</h5>
+    </div>
+    <div class="android-preview">
+      <h5>Android</h5>
+    </div>
+    <img class="pwa-info" src="./assets/pwaInfoBackground.svg" alt="pwa info graphic">
 
     <footer>
       <span>Find this useful? Care to make it better? <a href="https://github.com/panev/beyond-pwa.git" target="_blank">Contribute!</a> Licensed under <a href="https://choosealicense.com/licenses/gpl-3.0/" target="_blank">GNU GPL 3.0</a></span>
@@ -47,11 +44,23 @@ export default {
   name: 'app',
   components: {
     BeyondPlayer
+  },
+  data: {
+    platform: 'ios'
+  },
+  methods: {
+    getPlatform() {
+      return "ios"
+    }
   }
 }
 </script>
 
 <style lang="scss">
+
+::selection {
+  background: yellow;
+}
 
 $c-primary: #203555;
 $c-secondary: #55D9CC;
@@ -61,8 +70,10 @@ html {
   padding: 0;
   margin: 0;
   overflow-x: hidden;
-  overflow-y: scroll;
-  padding-bottom: 200px; 
+}
+
+html {
+  overflow-y: scroll; 
 }
 
 * {
@@ -230,6 +241,13 @@ p.pwa-info {
   margin-top: 70px;
 }
 
+img.pwa-info {
+  grid-column: 1 / 13;
+  z-index: -2;
+  margin-top: 150px;
+  position: relative;
+}
+
 
 .ios-preview,
 .android-preview {
@@ -238,14 +256,14 @@ p.pwa-info {
   margin-top: 200px;
   grid-row: pwa-info;
   position: relative;
+  border: 2px $c-secondary;
+  background: #fff;
+  transition: 0.3s;
+  display: flex;
+  justify-content: center;
 
-  & .video-clip {
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-    border: 10px solid #fff;
-    height: 300px;
-    border-radius: 50%;
+  & img {
+    align-self: center;
   }
 
   &:after {
@@ -254,8 +272,9 @@ p.pwa-info {
     width: 350px;
     height: 350px;
     background: url('./assets/previewShadow.svg');
+    opacity: 0.3;
     position: absolute;
-    top: -15px;
+    top: -5px;
     left: -30px;
     z-index: -1;
   }
@@ -271,36 +290,14 @@ p.pwa-info {
 
 .ios-preview {
   grid-column: 2 / 6;
+  border-style: dashed solid;
 
-  & video {
-      transform: scale(1) translate(0px, 0px);
-      transform-origin: center;
-      animation: ios-ani 12s infinite linear;
-  }
-}
-
-@keyframes ios-ani {
-  0% {
-    transform: scale(1) translate(-70px, 0px);
-  }
-
-  4% {
-    transform: scale(.9) translate(-70px, -320px);
-  }
-
-  8% {
-    transform: scale(1.5) translate(-40px,-410px);
-  }
-  10% {
-    transform: scale(1) translate(0px, 0px);
-  }
-  100% {
-    transform: scale(1) translate(0px, 0px);
-  }
 }
 
 .android-preview {
   grid-column: 8 / 12;
+  border-style: solid dotted;
+
 }
 
 
@@ -351,6 +348,8 @@ footer {
     padding: 0;
     overflow-y: hidden;
     overflow-x: hidden;
+    background-image: url('./assets/iOSexpl.png');
+    background-size: 100%; 
   }
 
   .head-logo,
@@ -373,6 +372,7 @@ footer {
     height: 100%;
     overflow-y: hidden;
     overflow-x: hidden;
+    background: none;
     
     &:after {
       display: none;
@@ -386,6 +386,7 @@ footer {
     overflow-y: hidden;
     overflow-x: hidden;
   }
+
 }
 
 @media (max-height: 800px) {

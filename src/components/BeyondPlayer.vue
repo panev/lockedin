@@ -73,7 +73,7 @@ export default {
 .player-container {
   width: 100%;
   height: 100%;
-  background: url('../assets/playerBackground.png');
+  background: url('../assets/playerBackground.jpg');
   background-size: cover; 
   position: absolute;
   z-index: 0;
