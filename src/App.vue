@@ -1,5 +1,5 @@
 <template>
-  <div v-bind:class="platform" id="app">
+  <div id="app">
 
     <img src="./assets/Airwaves.svg" class="airwaves" alt="airwaves graphic">
     <!-- <div class="wave"></div> -->
@@ -34,6 +34,9 @@
       <span>Follow / DM me on <a href="https://twitter.com/todorpanev" target="_blank">Twitter</a></span>
     </footer>
 
+    <img class="easter-explainer-ios top" src="./assets/iOSexpl.png" alt="explanation how to add to home screen on ios">
+    <img class="easter-explainer-ios bottom" src="./assets/iOSexpl.png" alt="explanation how to add to home screen on ios">
+
   </div>
 </template>
 
@@ -45,14 +48,22 @@ export default {
   components: {
     BeyondPlayer
   },
-  data: {
-    platform: 'ios'
-  },
-  methods: {
-    getPlatform() {
-      return "ios"
-    }
-  }
+  // WIP platform detection
+  // data: function() {
+  //   return {
+  //     platform: 'unknown-platform'
+  //   }
+  // },
+  // mounted: function() {
+  //   return this.getPlatform;
+  // },
+  // methods: {
+  //   getPlatform() {
+  //     if( /iPhone|iPod/i.test(navigator.userAgent) ) {
+  //       this.platform = "ios"
+  //     }
+  //   }
+  // }
 }
 </script>
 
@@ -64,6 +75,10 @@ export default {
 
 $c-primary: #203555;
 $c-secondary: #55D9CC;
+
+.easter-explainer-ios {
+  display: none;
+}
 
 body,
 html {
@@ -95,7 +110,6 @@ html {
     [footer] 300px;
   ;
   grid-row-gap: 90px;
-
 }
 
 .head-logo {
@@ -300,7 +314,6 @@ img.pwa-info {
 
 }
 
-
 footer {
   grid-row: footer;
   border-top: 1px dashed rgba($c-primary, .10);
@@ -330,6 +343,20 @@ footer {
 
 @media (max-width: 1024px) {
 
+  .easter-explainer-ios {
+    position: fixed;
+    z-index: -10;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    &.bottom {
+      bottom: 20px;
+    }
+    &.top {
+      top: 20px;
+    }
+  }
+
   #app {
     justify-content: center;
     grid-template-columns: 1fr;
@@ -340,6 +367,10 @@ footer {
     overflow-y: hidden;
     overflow-x: hidden;
 
+    &.ios {
+      height: 50%;
+    }
+
   }
 
   body, html {
@@ -348,8 +379,13 @@ footer {
     padding: 0;
     overflow-y: hidden;
     overflow-x: hidden;
+  }
+
+  html {
     background-image: url('./assets/iOSexpl.png');
     background-size: 100%; 
+    background-repeat: repeat;
+    background-color: $c-primary;
   }
 
   .head-logo,
