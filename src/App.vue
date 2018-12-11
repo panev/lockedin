@@ -20,6 +20,11 @@
       <h1 class="pwa-info">Tune in anywhere</h1>
       <p class="pwa-info">You can use this site as an app on your phone – no need to download anyhing –  just visit this page and hit “Add to home screen”.</p>
       <div class="ios-preview">
+        <div class="video-clip">
+          <video autoplay muted loop playsinline preload="metadata">
+            <source src="./assets/ios.mp4" type="video/mp4">
+          </video>
+        </div>
         <h5>iOS</h5>
       </div>
       <div class="android-preview">
@@ -57,7 +62,7 @@ html {
   margin: 0;
   overflow-x: hidden;
   overflow-y: scroll;
-  padding-bottom: 200px;
+  padding-bottom: 200px; 
 }
 
 * {
@@ -230,11 +235,18 @@ p.pwa-info {
 .android-preview {
   height: 300px;
   border-radius: 50%;
-  background: hotpink;
   margin-top: 200px;
-  border: 10px solid #fff;
   grid-row: pwa-info;
   position: relative;
+
+  & .video-clip {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    border: 10px solid #fff;
+    height: 300px;
+    border-radius: 50%;
+  }
 
   &:after {
     content: ' ';
@@ -259,6 +271,32 @@ p.pwa-info {
 
 .ios-preview {
   grid-column: 2 / 6;
+
+  & video {
+      transform: scale(1) translate(0px, 0px);
+      transform-origin: center;
+      animation: ios-ani 12s infinite linear;
+  }
+}
+
+@keyframes ios-ani {
+  0% {
+    transform: scale(1) translate(-70px, 0px);
+  }
+
+  4% {
+    transform: scale(.9) translate(-70px, -320px);
+  }
+
+  8% {
+    transform: scale(1.5) translate(-40px,-410px);
+  }
+  10% {
+    transform: scale(1) translate(0px, 0px);
+  }
+  100% {
+    transform: scale(1) translate(0px, 0px);
+  }
 }
 
 .android-preview {
@@ -299,15 +337,17 @@ footer {
     justify-content: center;
     grid-template-columns: 1fr;
     grid-column-gap: 0px; 
-    grid-template-rows: calc(100% + 20px);
+    grid-template-rows: 100%;
     grid-row-gap: 0px;
-    height: calc(100% + 20px);
+    height: 100%;
     overflow-y: hidden;
     overflow-x: hidden;
+
   }
 
   body, html {
-    height: calc(100% + 20px);
+    height: 100%;
+    height: calc(100% + env(safe-area-inset-top));
     padding: 0;
     overflow-y: hidden;
     overflow-x: hidden;
@@ -320,7 +360,8 @@ footer {
   .android-preview,
   .phone-notch,
   .airwaves,
-    footer {
+  .wave,
+  footer {
       display: none;
   }
 
@@ -329,7 +370,7 @@ footer {
     grid-row: 1;
     border: none;
     border-radius: 0;
-    height: calc(100% + 20px);
+    height: 100%;
     overflow-y: hidden;
     overflow-x: hidden;
     

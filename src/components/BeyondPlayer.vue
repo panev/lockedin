@@ -37,9 +37,6 @@ export default {
       nowPlaying: ''
     }
   },
-  mounted: function() {
-    this.scrollBy();
-  },
   methods: {
     // Future feature (Showing the now-laying title, blocked by CORS issue)
     // setStreamTitle() {
@@ -57,9 +54,6 @@ export default {
     //   }
     //   req.send();
     // },
-    scrollBy() {
-      window.scrollBy(0, 40);
-    },
     bdPlay() {
       this.$refs.bdPlayer.play();
       this.isPlaying = true;
