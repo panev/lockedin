@@ -1,7 +1,7 @@
 <template>
   <div class="player-container">
 
-    <audio ref="bdPlayer" id="bdplayer" src="http://bassdrive.radioca.st:80/;stream/1" volume="0.1">
+    <audio ref="bdPlayer" id="bdplayer" src="http://bassdrive.radioca.st:80/;stream/1" volume="1">
     </audio>
 <!-- Future feature -->
 <!-- <h2>{{ nowPlaying }}</h2> -->
@@ -55,6 +55,7 @@ export default {
     //   req.send();
     // },
     bdPlay() {
+      this.$refs.bdPlayer.volume=0.25;
       this.$refs.bdPlayer.play();
       this.isPlaying = true;
       // Future feature
@@ -69,10 +70,6 @@ export default {
 </script>
 
 <style lang="scss">
-
-#app.ios .player-container {
-  height: 50%;
-}
 
 .player-container {
   width: 100%;

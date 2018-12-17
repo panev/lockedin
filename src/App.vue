@@ -1,8 +1,7 @@
 <template>
-  <div v-bind:class="platform" id="app">
+  <div v-bind:class="{ ios: platformiOS }" id="app"> 
 
     <img src="./assets/Airwaves.svg" class="airwaves" alt="airwaves graphic">
-    <!-- <div class="wave"></div> -->
     <img src="./assets/Wave.svg" class="wave w1" alt="wave graphic"> 
     <img src="./assets/Wave.svg" class="wave w2" alt="wave graphic">
     <img src="./assets/Wave.svg" class="wave w3" alt="wave graphic">
@@ -18,7 +17,7 @@
     <h5 class="player-info"><img src="./assets/Arrow.svg" alt="arrow pointing left"> Click Play and try it out!</h5>
 
     <h1 class="pwa-info">Tune in anywhere</h1>
-    <p class="pwa-info">You can use this site as an app on your phone – no need to download anyhing –  just visit this page and hit “Add to home screen”.</p>
+    <p class="pwa-info">You can use this site as an app on your phone &ndash; no need to download anyhing &ndash;  just visit this page and hit “Add to home screen”.</p>
     <div class="ios-preview">
       <img src="./assets/iOSexpl.png" alt="explanation how to add to home screen on ios">
       <h5>iOS</h5>
@@ -49,19 +48,18 @@ export default {
   components: {
     BeyondPlayer
   },
-  // WIP platform detection
   data: function() {
     return {
-      platform: 'not-ios'
+      platformiOS: false
     }
   },
   mounted: function() {
-    return this.getPlatform;
-  },
+    this.getPlatform()
+  }, 
   methods: {
     getPlatform() {
       if( /iPhone|iPod/i.test(navigator.userAgent) ) {
-        this.platform = "ios"
+        this.platformiOS = true;
       }
     }
   }
@@ -349,7 +347,7 @@ footer {
     z-index: -10;
     left: 50%;
     transform: translateX(-50%);
-    display: block;
+    display: none;
     &.bottom {
       bottom: 20px;
     }
@@ -368,8 +366,8 @@ footer {
     overflow-y: hidden;
     overflow-x: hidden;
 
-    &.ios {
-      height: 50%;
+    &.ios .easter-explainer-ios {
+      display: block;
     }
 
   }
@@ -380,6 +378,10 @@ footer {
     padding: 0;
     overflow-y: hidden;
     overflow-x: hidden;
+  }
+
+  body {
+    background: $c-primary;
   }
 
   .head-logo,
