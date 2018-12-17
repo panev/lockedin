@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div v-bind:class="platform" id="app">
 
     <img src="./assets/Airwaves.svg" class="airwaves" alt="airwaves graphic">
     <!-- <div class="wave"></div> -->
@@ -24,6 +24,7 @@
       <h5>iOS</h5>
     </div>
     <div class="android-preview">
+      <img src="./assets/androidexpl.png" alt="explanation how to add to home screen on ios">
       <h5>Android</h5>
     </div>
     <img class="pwa-info" src="./assets/pwaInfoBackground.svg" alt="pwa info graphic">
@@ -49,21 +50,21 @@ export default {
     BeyondPlayer
   },
   // WIP platform detection
-  // data: function() {
-  //   return {
-  //     platform: 'unknown-platform'
-  //   }
-  // },
-  // mounted: function() {
-  //   return this.getPlatform;
-  // },
-  // methods: {
-  //   getPlatform() {
-  //     if( /iPhone|iPod/i.test(navigator.userAgent) ) {
-  //       this.platform = "ios"
-  //     }
-  //   }
-  // }
+  data: function() {
+    return {
+      platform: 'not-ios'
+    }
+  },
+  mounted: function() {
+    return this.getPlatform;
+  },
+  methods: {
+    getPlatform() {
+      if( /iPhone|iPod/i.test(navigator.userAgent) ) {
+        this.platform = "ios"
+      }
+    }
+  }
 }
 </script>
 
@@ -379,13 +380,6 @@ footer {
     padding: 0;
     overflow-y: hidden;
     overflow-x: hidden;
-  }
-
-  html {
-    background-image: url('./assets/iOSexpl.png');
-    background-size: 100%; 
-    background-repeat: repeat;
-    background-color: $c-primary;
   }
 
   .head-logo,

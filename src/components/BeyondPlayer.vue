@@ -70,6 +70,10 @@ export default {
 
 <style lang="scss">
 
+#app.ios .player-container {
+  height: 50%;
+}
+
 .player-container {
   width: 100%;
   height: 100%;
