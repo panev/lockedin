@@ -1,33 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="172px" height="24px" viewBox="0 0 172 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
-    <title>Notch</title>
-    <desc>Created with Sketch.</desc>
-    <defs>
-        <rect id="path-1" x="66" y="8" width="39.5241679" height="5.13933022" rx="2.56966511"></rect>
-        <filter x="-5.1%" y="-19.5%" width="110.1%" height="177.8%" filterUnits="objectBoundingBox" id="filter-3">
-            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
-            <feGaussianBlur stdDeviation="0.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
-            <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 0.217589447 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
-        </filter>
-    </defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Desktop-HD" transform="translate(-395.000000, -183.000000)">
-            <g id="Group-2" transform="translate(341.000000, 183.000000)">
-                <g id="Group">
-                    <g id="Notch" transform="translate(54.000000, 0.000000)">
-                        <path d="M0.821052632,-1.13686838e-13 L171.495036,-1.13686838e-13 C168.823219,-8.72089455e-14 167.487311,1.3656377 167.487311,4.09691311 C167.487311,5.0882365 167.48731,6.57417886 167.487309,8.5547402 L167.487308,8.5547402 C167.487304,16.8390077 160.771576,23.554731 152.487309,23.554731 L19.0030873,23.554731 C10.718816,23.554731 4.00308726,16.8390022 4.00308726,8.55473098 C4.00308726,7.38766703 4.00308726,6.22060307 4.00308726,5.05353911 C4.00308726,2.24533996 2.94240905,0.560826928 0.821052632,-1.13686838e-13 Z" id="Rectangle" fill="#FFFFFF" fill-rule="nonzero"></path>
-                        <circle id="Oval-" fill="#F1F0F0" cx="127.5" cy="10.5" r="4.5"></circle>
-                        <mask id="mask-2" fill="white">
-                            <use xlink:href="#path-1"></use>
-                        </mask>
-                        <g id="s">
-                            <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-1"></use>
-                            <use fill="#F1F0F0" fill-rule="evenodd" xlink:href="#path-1"></use>
-                        </g>
-                    </g>
-                </g>
-            </g>
-        </g>
-    </g>
+<svg width="172" height="24" viewBox="0 0 172 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.821045 0H171.495C171.495 0 167.487 0 167.487 4.09691C167.487 5.06749 167.487 6.67025 167.487 8.55118C167.487 16.8354 160.772 23.5547 152.487 23.5547H19.0031C10.7188 23.5547 4.00308 16.8356 4.00308 8.55136C4.00308 7.11649 4.00308 5.88752 4.00308 5.05354C4.00308 0.84124 0.821045 0 0.821045 0Z" fill="#0F3041" fill-opacity="0.7"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M127.5 15C129.985 15 132 12.9853 132 10.5C132 8.01472 129.985 6 127.5 6C125.015 6 123 8.01472 123 10.5C123 12.9853 125.015 15 127.5 15Z" fill="#0A0A0A" fill-opacity="0.67"/>
+<rect x="66" y="8" width="39.5242" height="5.13933" rx="2.56967" fill="#0A0A0A" fill-opacity="0.67"/>
 </svg>

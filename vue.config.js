@@ -2,7 +2,7 @@ module.exports = {
   productionSourceMap: false,
 
   pwa: {
-    name: 'Lockedin Live',
+    name: 'Lockedin App',
     appleMobileWebAppStatusBarStyle: 'black-translucent',
     themeColor: '#000000'
   }

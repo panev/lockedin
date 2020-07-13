@@ -13,20 +13,29 @@
       <img src="./assets/blackNotch.svg" class="phone-notch" alt="phone notch">
       <BeyondPlayer />
     </div>
-    <h1 class="player-info">Listen to bassdrive radio on your phone or in your browser</h1>
+    <h1 class="player-info">Listen to bassdrive radio on your phone, desktop or browser</h1>
     <h5 class="player-info"><img src="./assets/Arrow.svg" alt="arrow pointing left"> Click Play and try it out!</h5>
 
-    <h1 class="pwa-info">Tune in anywhere</h1>
-    <p class="pwa-info">You can use this site as an app on your phone &ndash; no need to download anyhing &ndash;  just visit this page and hit “Add to home screen”.</p>
+    <h1 class="pwa-info">Listen as an app on your desktop
+</h1>
+    <p class="pwa-info">You can use this site as an app on your phone &ndash; no need to download anyhing &ndash;  just visit this page and hit “Add to home” screen from your phone's share ot options menu.</p>
     <div class="ios-preview">
       <img src="./assets/iOSexpl.png" alt="explanation how to add to home screen on ios">
-      <h5>iOS</h5>
+      <h5 class="subtitle-h5">iOS</h5>
     </div>
     <div class="android-preview">
       <img src="./assets/androidexpl.png" alt="explanation how to add to home screen on ios">
-      <h5>Android</h5>
+      <h5 class="subtitle-h5">Android</h5>
     </div>
     <img class="pwa-info" src="./assets/pwaInfoBackground.svg" alt="pwa info graphic">
+
+    <h1 class="desktop-info">Listen as an app on your desktop</h1>
+    <p class="desktop-info">Similarly to the phone, you can use this site as an app in your computer. Just click the "Install" icon in Google Chrome's address bar.</p>
+    <div class="desktop-preview">
+      <img src="./assets/desktopexpl.png" alt="explanation how to add to home screen on ios">
+      <h5 class="subtitle-h5">macOS & Windows</h5>
+    </div>
+    <img class="desktop-info" src="./assets/pwaInfoBackground.svg" alt="pwa info graphic">
 
     <footer>
       <span>Find this useful? Care to make it better? <a href="https://github.com/panev/beyond-pwa.git" target="_blank">Contribute!</a> Licensed under <a href="https://choosealicense.com/licenses/gpl-3.0/" target="_blank">GNU GPL 3.0</a></span>
@@ -105,7 +114,8 @@ html {
   grid-template-rows: 
     [logo] 100px 
     [player-info] 580px 
-    [pwa-info] 580px 
+    [pwa-info] 580px
+    [desktop-info] 580px 
     [footer] 300px;
   ;
   grid-row-gap: 90px;
@@ -176,20 +186,19 @@ html {
 }
 
 .phone-frame {
-  background-color: $c-primary;
   grid-row: player-info;
   grid-column: 2 / 6;
   height: 530px;
   grid-column: 2 / 6;
-  border-radius: 24px;
-  border: 10px solid $c-primary;
+  border-radius: 34px;
+  border: 10px solid rgba(32,53,85,0.1);
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   position: relative;
 
   & img {
-    margin-top: -0.6px;
     z-index: 1;
   }
 
@@ -250,15 +259,31 @@ p {
   text-align: center;
 }
 
+.desktop-info {
+  grid-column: 2 / 12;
+  grid-row: desktop-info;
+  text-align: center;
+  margin-top: 70px;
+}
+
+p.desktop-info {
+  margin-top: 120px;
+}
+
 p.pwa-info {
   margin-top: 70px;
 }
 
-img.pwa-info {
+img.pwa-info,
+img.desktop-info {
   grid-column: 1 / 13;
   z-index: -2;
   margin-top: 150px;
   position: relative;
+}
+
+img.desktop-info {
+  transform: rotate(180deg);
 }
 
 
@@ -291,26 +316,44 @@ img.pwa-info {
     left: -30px;
     z-index: -1;
   }
+}
 
-  & h5 {
+.subtitle-h5 {
     text-align: center;
     position: absolute;
     bottom: -110px;
     left: 50%;
+    font-weight: bold;
     transform: translateX(-50%);
-  }
 }
 
 .ios-preview {
   grid-column: 2 / 6;
   border-style: dashed solid;
-
 }
 
 .android-preview {
   grid-column: 8 / 12;
   border-style: solid dotted;
+}
 
+.desktop-preview {
+  position: relative;
+  grid-row: desktop-info;
+  height: 300px;
+  margin-top: 200px;
+  background: #fff;
+  border-radius: 64px;
+  border: 2px $c-secondary;
+  border-style: solid dashed;
+  grid-column: 2 / 12;
+  box-shadow: 0 25px 32px rgba(0,0,0,0.08);
+  display: flex;
+  justify-content: center;
+  & img {
+    align-self: center;
+
+  }
 }
 
 footer {
@@ -387,8 +430,10 @@ footer {
   .head-logo,
   .player-info,
   .pwa-info,
+  .desktop-info,
   .ios-preview,
   .android-preview,
+  .desktop-preview,
   .phone-notch,
   .airwaves,
   .wave,
