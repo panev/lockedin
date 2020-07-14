@@ -14,7 +14,7 @@
       <BeyondPlayer />
     </div>
     <h1 class="player-info">Listen to bassdrive radio on your phone, desktop or browser</h1>
-    <h5 class="player-info"><img src="./assets/Arrow.svg" alt="arrow pointing left"> Click Play and try it out!</h5>
+    <h5 class="player-info"><img src="./assets/Arrow.svg" alt="arrow pointing left"> Click the play icon and try it out!</h5>
 
     <h1 class="pwa-info">Listen as an app on your desktop
 </h1>
@@ -82,7 +82,7 @@ export default {
 }
 
 $c-primary: #203555;
-$c-secondary: #55D9CC;
+$c-secondary: #2CC3B4;
 
 .easter-explainer-ios {
   display: none;
